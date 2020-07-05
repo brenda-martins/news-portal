@@ -21,3 +21,9 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+/resources/views/layouts
+/resources/views/site/post.blade.php
+/resources/views/welcome.blade.php
+/resources/views/auth/passwords
+/resources/views/auth/register.blade.php
+/resources/views/auth/verify.blade.php
