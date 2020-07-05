@@ -1,0 +1,460 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.6rem !important;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.5);
+}
+/*
+HEADER-TOP
+*/
+
+.header-top {
+    padding: 10px 0px;
+    border-bottom: 1px solid #ededed;
+}
+
+.header-top .title {
+    border-right: 1px solid #ededed;
+    text-align: center;
+}
+
+.header-top nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_networks {
+    display: flex;
+}
+
+.social_networks li {
+    margin-right: 8px;
+}
+
+.header-top .sign {
+    display: flex;
+}
+
+.header-top .sign > div {
+    margin-right: 10px;
+    /* background-color: #d84315; */
+    padding: 5px;
+}
+
+.header-top .sign a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.header-top .date-atual {
+    border-left: 1px solid #ededed;
+    text-align: center;
+}
+
+.header-top h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/**
+HEADER-MIDDLE
+*/
+
+.header-middle {
+    padding: 20px 0px;
+}
+
+/* .header-middle  */
+.logo1 {
+    font-size: 2.4rem;
+    color: #d84315;
+    text-transform: uppercase;
+}
+
+/* .header-middle  */
+.logo2 {
+    font-size: 2.4em;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+}
+
+/**
+HEADER-BOTTOM
+*/
+
+.header-bottom {
+    padding: 15px 0px;
+    background-color: rgb(52, 58, 64);
+}
+
+.header-bottom ul li {
+    margin-right: 3%;
+}
+
+.header-bottom ul li a {
+    font-size: 1.7rem;
+}
+/**
+MAIN
+*/
+
+.title-sections {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #d84315;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.lazy-img img {
+    opacity: 0;
+}
+
+.lazy-img img.loaded {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+/**
+SECTION RECENT NEWS
+*/
+.recent-news {
+    margin: 2% 0;
+}
+
+.recent-news img {
+    height: 350px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.carousel-caption {
+    text-align: justify !important;
+}
+
+.carousel-caption span {
+    padding: 4px 18px;
+    background-color: #0b7f8a;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+.carousel-caption h5 {
+    margin-top: 10px;
+}
+.carousel-caption h5 a {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 1.4rem;
+}
+
+/* .recent-news h4 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #d84315;
+} */
+
+/**
+SECTION HIGHLIGHTS
+*/
+
+.highlights {
+    margin-top: 3%;
+}
+
+.highlights-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.highlights-content {
+    height: 300px;
+    margin: 2%;
+}
+
+.highlights-text {
+    height: 70px;
+    overflow: hidden;
+    margin: 8px 0;
+    padding: 5px;
+}
+
+.highlights-text h5 {
+    font-size: 1.7rem;
+}
+
+.highlights .title-sections {
+    border-bottom: 2px solid black;
+    margin-bottom: 3%;
+    margin-top: 1%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.highlights-img {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border: 1px solid #ededed;
+    padding: 1%;
+    height: 60%;
+}
+
+.highlights-img img {
+    width: 100%;
+    height: 100%;
+    object-fit:  cover;
+}
+
+.highlights-text h5 a {
+    font-size: 1.8rem;
+    color: rgb(52, 58, 64);
+    font-weight: 600;
+    margin: 8px;
+}
+
+.news-info {
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-info span a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgb(216, 67, 21);
+    padding: 5px;
+}
+
+.opnion img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.opnion-author p {
+    text-align: center;
+    margin-top: 2%;
+    color: rgb(216, 67, 21);
+    font-size: 1.4rem;
+    border-bottom: 1px solid #ededed;
+}
+
+.opnion-bottom a {
+    margin-left: 80%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(52, 58, 64);
+}
+
+.opnion-bottom a:hover {
+    color: rgb(216, 67, 21);
+    text-decoration: none;
+}
+
+footer {
+    background-color: rgb(52, 58, 64);
+    padding: 2%;
+    margin-top: 5%;
+}
+
+footer h4 {
+    font-size: 1.9rem;
+    color: rgb(216, 67, 21);
+}
+
+footer p {
+    font-size: 1.3rem;
+    color: #fff;
+    line-height: 2.3rem;
+}
+
+footer ul li {
+    color: #fff;
+    line-height: 2.3rem;
+    font-size: 1.5rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem;
+    }
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/*
+* Navbar
+*/
+
+.navbar-brand {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar .navbar-toggler {
+    top: 0.25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: 0.75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/* .post-title {
+    margin: 5%;
+} */
+/* #regForm {
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+} */
+
+/* Style the input fields */
+/* input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+} */
+
+/* Mark input boxes that gets an error on validation: */
+/* input.invalid {
+    background-color: #ffdddd;
+} */
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+    margin: 5%;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #4caf50;
+}
+
+.post-buttons {
+    margin: 15% 2%;
+    float: right;
+}
+
+/* #prevBtn {
+    padding: 15px;
+    background-color: rgb(187, 187, 187);
+    color: #fff;
+    border: none;
+}
+
+#nextBtn {
+    padding: 15px;
+} */

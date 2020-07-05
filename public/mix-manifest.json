@@ -1,0 +1,9 @@
+{
+    "/css/app.css": "/css/app.css",
+    "/css/admin/main.css": "/css/admin/main.css",
+    "/css/site/main.css": "/css/site/main.css",
+    "/js/jquery.js": "/js/jquery.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/admin/form.js": "/js/admin/form.js",
+    "/js/site/lazy-load.js": "/js/site/lazy-load.js"
+}

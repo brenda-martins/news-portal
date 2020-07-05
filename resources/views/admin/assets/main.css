@@ -1,0 +1,295 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    outline: 0;
+}
+
+#login {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: #e5e5e5;
+    height: 100%;
+    width: 100%;
+    /* max-width: 1351px; */
+}
+
+.form_login {
+    background-color: #243238;
+    padding: 30% 5% 8%;
+    height: 100vh;
+}
+
+.logo1 {
+    font-size: 2.4rem;
+    color: #d84315;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 22px;
+}
+
+/* .header-middle  */
+.logo2 {
+    font-size: 2.4em;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    text-align: center;
+}
+.form_login label {
+    color: #fff;
+}
+
+#login input {
+    background-color: initial;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form_login input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.form_login button {
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #f4511e, #d84315);
+    padding: 3%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.login_footer {
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.login_footer span{
+    text-align: center;
+}
+
+.login_footer .hours{
+    font-size: 3.8rem;
+    font-weight: 800;
+}
+
+.login_footer .day{
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/**
+* MASTER
+*/
+
+#sidebarMenu {
+    min-height: 100vh;
+}
+.sidebar-header {
+    padding: 20px;
+    display: block;
+}
+
+.sidebar-header .user-pic {
+    width: 80px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.sidebar-header .user-pic img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-header .user-info {
+    margin-top: 3%;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+}
+
+.sidebar-footer > a {
+    flex-grow: 1;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+.sidebar-footer > a .notification {
+    position: absolute;
+    top: 0;
+}
+
+.badge-sonar {
+    display: inline-block;
+    background: #980303;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 0;
+}
+
+.badge-sonar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #980303;
+    opacity: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: sonar 1.5s infinite;
+}
+
+/**
+*NEW POST
+*/
+.tab {
+    display: none;
+    margin: 5%;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.3;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step.finish {
+    background-color: #4caf50;
+}
+
+.post-buttons {
+    margin: 0% 2%;
+    float: right;
+}
+
+.featured-image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    /* height: 380px; */
+    background-color: rgb(220, 220, 220);
+    margin: auto;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.featured-image input[type="file"] {
+    padding: 10px;
+    background: #2d2d2d;
+    width: 100%;
+}
+
+/**
+  *LIST POSTS
+  */
+.post-manager h4 {
+    position: relative;
+    margin: 4% 0;
+}
+
+.post-manager h4::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    content: " ";
+    width: 2em;
+    height: 0.15em;
+    margin-bottom: -0.5em;
+    background: #2f353e;
+    left: 0;
+}
+
+/**
+*EDIT POST
+*/
+
+.card-body .form-check {
+    margin: 10px;
+}
+.card-body .form-check input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+}
+
+.card-footer button {
+    width: 100%;
+    border: none;
+    padding: 3%;
+    background: linear-gradient(180deg, #f4511e, #d84315);
+    color: #fff;
+    font-weight: 700;
+}
+
+.card-body a {
+    margin: auto;
+    justify-self: center;
+    width: 140px;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    padding: 2%;
+    border: 2px solid #252931;
+    color: #252931;
+    font-weight: 700;
+}
+
+.btn-cancel:hover {
+    background-color: #252931;
+    color: #fff;
+}
+
+.btn-remove {
+    background-color: transparent;
+    padding: 2%;
+    border: 2px solid #dc143c;
+    color: #dc143c;
+    font-weight: 700;
+}
+
+.btn-remove:hover {
+    background-color: #dc143c;
+    color: #fff;
+}
