@@ -1,6 +1,13 @@
 # news-portal
 Laravel news portal
 
+# Some screens
+![](https://github.com/brenda-martins/news-portal/blob/master/images/home.jpg)
+![](https://github.com/brenda-martins/news-portal/blob/master/images/login.png)
+![](https://github.com/brenda-martins/news-portal/blob/master/images/post-list.jpg)
+![](https://github.com/brenda-martins/news-portal/blob/master/images/post-add.png)
+![](https://github.com/brenda-martins/news-portal/blob/master/images/category.png)
+
 ## About this project
 
 The idea of this project is build an information sharing mechanism that has been used on a large scale around the world, a news portal.
