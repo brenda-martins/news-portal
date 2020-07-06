@@ -13,9 +13,9 @@
 <body>
     <main id="login">
         <div class="form_login">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
+            </li> -->
             <div>
                 <h3 class="logo1">breaking</h3>
                 <h3 class="logo2">news</h3>

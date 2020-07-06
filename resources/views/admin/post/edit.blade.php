@@ -9,7 +9,7 @@
 
         <div class="row">
             <div class="col-8">
-                <h4 style="margin-top: 4%;">Adicionar postagem</h4>
+                <h4 style="margin-top: 4%;">Editar postagem</h4>
                 <hr>
 
                 <div class="form-group" style="margin-bottom: 20px;">
@@ -18,7 +18,7 @@
                 </div>
 
 
-                <div class="form-group"  style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 20px;">
                     <label for="exampleFormControlSelect1">Autor</label>
                     <input type="text" class="form-control" name="author" value="{{$post->author}}">
                 </div>
@@ -67,7 +67,7 @@
                     <div class="card-body">
                         @foreach($categories as $category)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="category" value="{{ $category->id }}" @if($post->category === $category->id) checked  @endif
+                            <input class="form-check-input" type="radio" name="category" value="{{ $category->id }}" @if($post->category === $category->id) checked @endif
                             >
                             <label class="form-check-label" for="exampleRadios1">
                                 {{ $category->name }}
@@ -93,31 +93,29 @@
             </div>
         </div>
     </form>
-
-
-
-
-    @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/82bmftj7j05pf47ku4ygtxfofvka9eon163ecel5xatsaxxm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '#mytextarea'
-
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
-    @endsection
 </div>
+@endsection
+
+
+@section('scripts')
+<script src="https://cdn.tiny.cloud/1/82bmftj7j05pf47ku4ygtxfofvka9eon163ecel5xatsaxxm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 @endsection
