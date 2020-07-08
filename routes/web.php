@@ -24,29 +24,47 @@ Route::namespace('Web')->group(function () {
     Route::get('/notica/{post}/{slug}', 'PostController@show')->name('web.post.show');
 });
 
-Auth::routes();
 
-Route::namespace('Admin')->prefix('admin')->group(function () {
+/**
+ * Authors
+ */
 
-    /**
-     * Admin
-     */
-    Route::get('/', 'Admin@index')->name('admin.index');
+Route::namespace('Authors')->group(function () {
 
-    /**
-     * Categories
-     */
-    Route::get('/categorias', 'CategoryController@index')->name('admin.category.index');
-    Route::post('/category/store', 'CategoryController@store')->name('admin.category.store');
-
+    Route::get('autor', 'AuthorController@index')->name('author.index');
+    Route::get('autor/login', 'AuthController@showFormLogin')->name('autor.login');
+    Route::post('author/login', 'AuthController@login')->name('author.login');
+    Route::post('author/logout', 'AuthController@logout')->name('author.logout');
 
     /**
      * Posts
      */
-    Route::get('/postagem', 'PostController@index')->name('admin.post.index');
-    Route::get('/postagem/nova', 'PostController@create')->name('admin.post.create');
-    Route::post('/post/store', 'PostController@store')->name('admin.post.store');
-    Route::get('/postagem/{post}/editar', 'PostController@edit')->name('admin.post.edit');
-    Route::put('/post/{post}', 'PostController@update')->name('admin.post.update');
-    Route::delete('/post/{post}', 'PostController@destroy')->name('admin.post.destroy');
+    Route::get('autor/postagem', 'PostController@index')->name('author.post.list');
+    Route::get('autor/postagem/nova', 'PostController@create')->name('author.post.create');
+    Route::post('author/post/store', 'PostController@store')->name('author.post.store');
+    Route::get('autor/postagem/{post}/editar', 'PostController@edit')->name('author.post.edit');
+    Route::put('author/post/{post}', 'PostController@update')->name('author.post.update');
+    Route::delete('author/post/{post}', 'PostController@destroy')->name('author.post.destroy');
+});
+
+
+/**
+ * Admin
+ */
+Route::namespace('Admin')->group(function () {
+
+    /**
+     * Admin
+     */
+    Route::get('admin', 'Admin@index')->name('admin.index');
+    Route::get('admin/login', 'AuthController@showFormLogin')->name('admin.login');
+    Route::post('admin/login', 'AuthController@login')->name('admin.login');
+    Route::post('admin/logout', 'AuthController@logout')->name('admin.logout');
+
+
+    /**
+     * Categories
+     */
+    Route::get('admin/categorias', 'CategoryController@index')->name('admin.category.list');
+    Route::post('/category/store', 'CategoryController@store')->name('admin.category.store');
 });

@@ -1,9 +1,9 @@
-@extends('admin.master.master')
+@extends('authors.master.master')
 
 @section('content')
 <div class="container">
 
-    <form id="regForm" method="post" action="{{ route('admin.post.update', ['post' => $post->id]) }}" style="width: 100%;" enctype="multipart/form-data">
+    <form id="regForm" method="post" action="{{ route('author.post.update', ['post' => $post->id]) }}" style="width: 100%;" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -14,17 +14,25 @@
 
                 <div class="form-group" style="margin-bottom: 20px;">
                     <label>Título da publicação</label>
-                    <input type="text" class="form-control" name="title" value="{{ $post->title }}">
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $post->title }}">
+
+                    @error('title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                 </div>
 
-
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label for="exampleFormControlSelect1">Autor</label>
-                    <input type="text" class="form-control" name="author" value="{{$post->author}}">
-                </div>
 
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <textarea id="mytextarea" style="min-height: 750px;" name="content">
+                    @error('content')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
+                    <textarea id="mytextarea" style="min-height: 750px;" name="content" class="@error('content') is-invalid @enderror">
                         <p>{{ $post->content }}</p>
                     </textarea>
                 </div>
@@ -52,7 +60,7 @@
                             </label>
                         </div>
                         <hr>
-                        <a class="btn-cancel" href="{{ route('admin.post.index') }}">Cancelar</a>
+                        <a class="btn-cancel" href="{{ route('author.post.list') }}">Cancelar</a>
                         <a class="btn-remove">Excluir publicação</a>
                     </div>
                     <div class="card-footer text-muted">
@@ -64,11 +72,17 @@
                     <div class="card-header">
                         Categoria
                     </div>
+
+                    @error('category')
+                    <span style="display: block; width: 100%;  margin-top: 0.25rem; font-size: 80%;  color: #e3342f; text-align: center;">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                     <div class="card-body">
                         @foreach($categories as $category)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="category" value="{{ $category->id }}" @if($post->category === $category->id) checked @endif
-                            >
+                            <input class="form-check-input @error('category') is-invalid @enderror" type="radio" name="category" value="{{ $category->id }}" @if($post->category === $category->id) checked @endif>
                             <label class="form-check-label" for="exampleRadios1">
                                 {{ $category->name }}
                             </label>
@@ -85,7 +99,12 @@
 
                         <div class="featured-image">
                             <img id="blah" src="{{env('APP_URL')}}/storage/{{$post->image}}" />
-                            <input type='file' onchange="readURL(this);" name="file" value="{{ $post->image }}" />
+                            <input type='file' onchange="readURL(this);" name="file" value="{{ $post->image }}" class="@error('file') is-invalid @enderror" />
+                            @error('file')
+                            <span class="invalid-feedback">
+                                <strong>{{$message}}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                 </div>

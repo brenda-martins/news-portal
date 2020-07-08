@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Session\Session;
@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:web_administrators');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +24,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-
         return view('admin.category.category', [
             'categories' => Category::all()
         ]);
@@ -42,16 +48,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
-        // $messages = [
-        //     'required' => 'O campo nome está vazio.',
-        // ];
-
-        // $validateData = $request->validate([
-        //     'name' => 'required|max:255'
-        // ]);
-
-
         $v = Validator::make($request->all(), [
             'name' => 'required|max:255|unique:categories'
         ]);

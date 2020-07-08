@@ -16,15 +16,16 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category');
+            $table->unsignedBigInteger('author');
             $table->string('title');
             $table->string('slug');
             $table->text('content');
-            $table->string('author');
             $table->string('image');
-            $table->boolean('spotlight');
+            $table->boolean('spotlight')->default(false);
             $table->timestamps();
 
             $table->foreign('category')->references('id')->on('categories');
+            $table->foreign('author')->references('id')->on('authors');
         });
     }
 

@@ -1,8 +1,9 @@
-@extends('admin.master.master')
+@extends('authors.master.master')
+
+
 
 @section('content')
 <div class="post-manager">
-
     <h4>Gerenciar postagens</h4>
     <div>
         {{
@@ -12,8 +13,8 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <!-- <th scope="col">#</th> -->
-                <th scope="col-6">Título</th>
+                <th scope="col">Visualizações</th>
+                <th scope="col">Título</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Data</th>
                 <th scope="col"></th>
@@ -23,12 +24,13 @@
             @foreach($posts as $post)
 
             <tr>
-                <!-- <th scope="row">{{$post->id}}</th> -->
-                <td> {{$post->title}}</td>
-                <td>{{ $post->category()->first()->name }}</td>
-                <td>{{ date_format($post->created_at, 'd/m/y')}}</td>
-                <td>
-                    <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">
+                <td style="width: 10%;">{{$post->visitors}}</td>
+                <td style="width: 50%;"> {{$post->title}}</td>
+                <td style="width: 10%;">{{ $post->category()->first()->name }}</td>
+                <td style="width: 20%;">{{ date_format($post->created_at, 'd/m/Y : H:i:s')}}</td>
+                <td style="width: 10%;">
+
+                    <a href="{{ route('author.post.edit', ['post' => $post->id]) }}">
                         <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
                     </a>
 
@@ -36,7 +38,7 @@
                                                                       document.getElementById('form_delete').submit();">
                         <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
 
-                        <form id="form_delete" method="post" action="{{ route('admin.post.destroy', ['post' => $post->id]) }}" style="display: none;">
+                        <form id="form_delete" method="post" action="{{ route('author.post.destroy', ['post' => $post->id]) }}" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>

@@ -1,5 +1,6 @@
 {
     "/css/app.css": "/css/app.css",
+    "/css/shared/style.css": "/css/shared/style.css",
     "/css/admin/main.css": "/css/admin/main.css",
     "/css/site/main.css": "/css/site/main.css",
     "/js/jquery.js": "/js/jquery.js",

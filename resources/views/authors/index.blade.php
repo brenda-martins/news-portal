@@ -1,4 +1,4 @@
-@extends('admin.master.master')
+@extends('authors.master.master')
 
 
 @section('content')

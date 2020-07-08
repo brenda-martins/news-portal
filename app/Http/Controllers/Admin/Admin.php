@@ -10,7 +10,7 @@ class Admin extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:web_administrators');
     }
 
 
@@ -19,17 +19,5 @@ class Admin extends Controller
         return view("admin.index");
     }
 
-    /**
-     * @return void
-     */
-    public function login()
-    {
-    }
-
-    /**
-     * @return void
-     */
-    public function logout()
-    {
-    }
+   
 }

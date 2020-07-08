@@ -224,7 +224,7 @@ SECTION HIGHLIGHTS
 .highlights-img img {
     width: 100%;
     height: 100%;
-    object-fit:  cover;
+    object-fit: cover;
 }
 
 .highlights-text h5 a {
@@ -391,70 +391,57 @@ footer ul li {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
 
-/* .post-title {
-    margin: 5%;
-} */
-/* #regForm {
-    margin: 100px auto;
-    padding: 40px;
-    width: 70%;
-    min-width: 300px;
-} */
+/**
+* PAGE SINGLE POST
+*/
 
-/* Style the input fields */
-/* input {
-    padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
-} */
-
-/* Mark input boxes that gets an error on validation: */
-/* input.invalid {
-    background-color: #ffdddd;
-} */
-
-/* Hide all steps by default: */
-.tab {
-    display: none;
-    margin: 5%;
+.post-title,
+.post-image,
+.post-content,
+.post-info {
+    margin: 20px 0;
 }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
+.post-info ul li {
+    color: #777;
+    margin-bottom: 10px;
+    font-size: 12px;
     display: inline-block;
-    opacity: 0.5;
+    font-weight: 400;
+    margin-right: 44px;
+}
+.post-title h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
 }
 
-/* Mark the active step: */
-.step.active {
-    opacity: 1;
+.post-category {
+    border-bottom: 1.4px solid #0b7f8a;
+    text-transform: uppercase;
 }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-    background-color: #4caf50;
+.post-sidebar {
+    margin: 20px 0;
 }
 
-.post-buttons {
-    margin: 15% 2%;
-    float: right;
+.post-sidebar h1 {
+    font-size: 1.7rem;
+    border-top: 1px solid black;
+    color: #d84315;
+    text-align: center;
+    padding: 6px;
+    text-transform: uppercase;
 }
 
-/* #prevBtn {
-    padding: 15px;
-    background-color: rgb(187, 187, 187);
-    color: #fff;
-    border: none;
+.post-sidebar div {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
 }
 
-#nextBtn {
-    padding: 15px;
-} */
+.post-sidebar a {
+    color: #777;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: 200;
+}

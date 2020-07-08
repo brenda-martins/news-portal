@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/site/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="https://cdn.tiny.cloud/1/82bmftj7j05pf47ku4ygtxfofvka9eon163ecel5xatsaxxm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Breaking News</title>
 </head>
@@ -132,7 +133,10 @@
     <footer class="text-muted">
         <div class="container">
             <p class="float-right">
-                <a href="#">Back to top</a>
+                <a href="#">
+                    <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
+
+                </a>
             </p>
             <div class="row">
                 <p class="logo1">
@@ -147,7 +151,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>

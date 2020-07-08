@@ -8,19 +8,45 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/admin/main.css') }}">
+
+    <style>
+        .message {
+            display: block;
+            padding: 10px;
+            border: 2px solid #555555;
+            border-left-width: 32px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+
+            font-size: 0.875em;
+            font-weight: 600;
+        }
+
+        .message.error {
+            color: #ee5253;
+            border-color: #ee5253;
+        }
+    </style>
 </head>
 
 <body>
     <main id="login">
         <div class="form_login">
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li> -->
             <div>
                 <h3 class="logo1">breaking</h3>
                 <h3 class="logo2">news</h3>
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('author.login') }}">
                     @csrf
+
+                    @error('message')
+                    <span class="message error" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
+
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -57,6 +83,15 @@
             </div>
         </div>
         <div>
+            <div style="text-align: right; margin: 15px;">
+                <i class="fas fa-sign-out-alt"></i>
+                <a href="{{route('web.index')}}"> voltar ao portal</a>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <h1>Bem vindo, </h1>
+                <h3> Digite suas credenciais para entrar na área de autores</h3>
+            </div>
+
             <div class="login_footer">
                 <span class="hours">{{date('H:i')}}</span>
                 <span class="day"> {{ strftime('%A, %d de %B de %Y', strtotime('today')) }}</span>

@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'web_authors',
         'passwords' => 'users',
     ],
 
@@ -36,10 +36,21 @@ return [
     */
 
     'guards' => [
-        'web' => [
+
+        'web_authors' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'authors'
         ],
+
+        'web_administrators' => [
+            'driver' => 'session',
+            'provider' => 'administrators'
+        ],
+
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
 
         'api' => [
             'driver' => 'token',
@@ -65,17 +76,30 @@ return [
     |
     */
 
+
     'providers' => [
-        'users' => [
+        'authors' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\Author::class
+
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'administrators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Administrator::class
+        ]
     ],
+    // 'providers' => [
+    //     'users' => [
+    //         'driver' => 'eloquent',
+    //         'model' => App\User::class,
+    //     ],
+
+    // 'users' => [
+    //     'driver' => 'database',
+    //     'table' => 'users',
+    // ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------

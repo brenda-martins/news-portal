@@ -8,11 +8,34 @@
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Breaking News | Administrativo</title>
+
+    <style>
+        .message {
+            display: block;
+            padding: 10px;
+            border: 2px solid #555555;
+            border-left-width: 32px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+
+            font-size: 0.875em;
+            font-weight: 600;
+        }
+
+        .message.error {
+            color: #ee5253;
+            border-color: #ee5253;
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
+
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
                 <div class="sidebar-header">
                     <div class="user-pic">
@@ -34,13 +57,6 @@
                                 Painel
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.category.list')}}">
-                                <i class="fa fa-tag fa-lg" aria-hidden="true"></i>
-                                Categorias
-                            </a>
-                        </li>
-
 
                         <li class="nav-item">
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class=" nav-link dropdown-toggle">
@@ -49,8 +65,13 @@
                             </a>
                             <ul class="collapse list-unstyled" id="homeSubmenu" style="margin-left: 5%;">
                                 <li>
-                                    <a class="nav-link" href="#">
-                                        Estatísticas
+                                    <a class="nav-link" href="{{ route('author.post.create')}}">
+                                        Adicionar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="{{route('author.post.list')}}">
+                                        Listar
                                     </a>
                                 </li>
                             </ul>
@@ -63,12 +84,8 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                Usuários
-                            </a>
-                        </li>
+
+
 
                     </ul>
                 </div>
@@ -86,11 +103,11 @@
                         <i class="fa fa-cog"></i>
                         <span class="badge-sonar"></span>
                     </a>
-                    <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+                    <a href="{{ route('author.logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         <i class="fa fa-power-off"></i>
 
-                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('author.logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </a>

@@ -32,12 +32,12 @@ $ composer update
 ### database settings
 
 ```
-$ php artisan migrate
+$ php artisan migrate:fresh --seed
 ```
 
+- author:author@email.com
+- password: 123456
 
-OBS: has a sql file with some data already registered
-
-- user: admin@email.com
-- password: admin@123
+- admin: admin@email.com
+- password: 123456
 
